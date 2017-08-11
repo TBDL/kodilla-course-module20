@@ -18,11 +18,11 @@ public class Calculator {
         return b;
     }
 
-    public int add(int a, int b){
+    public int add(){
         return a + b;
     }
 
-    public int substract(int a, int b){
+    public int substract(){
         return a - b;
     }
 
