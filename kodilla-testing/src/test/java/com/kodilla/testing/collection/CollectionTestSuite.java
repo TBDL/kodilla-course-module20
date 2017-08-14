@@ -30,32 +30,30 @@ public class CollectionTestSuite {
         ArrayList<Integer> emptyList = new ArrayList<Integer>();
         //When
         ArrayList<Integer> emptyListTest = oddNumbersExterminator.exterminate(emptyList);
+        List expectedEmptylist = Collections.emptyList();
+        System.out.println("Testing empty list");
         //Then
-        if (emptyListTest.isEmpty()) {
-            System.out.println("Test of testOddNumbersExterminatorEmptyList: OK");
-        }
-    }
+        Assert.assertEquals(expectedEmptylist,emptyListTest);
+        
+     }
 
     @Test
     public void testOddNumbersExterminatorNormalList() {
         //Given
         OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
-        ArrayList<Integer> fullList = new ArrayList<Integer>();
-        fullList.add(1);
-        fullList.add(2);
-        fullList.add(3);
-        fullList.add(4);
+        ArrayList<Integer> normalList = new ArrayList<Integer>();
+        normalList.add(1);
+        normalList.add(2);
+        normalList.add(3);
+        normalList.add(4);
+        ArrayList<Integer> expectedNormalList = new ArrayList<Integer>();
+        expectedNormalList.add(2);
+        expectedNormalList.add(4);
         //When
-        ArrayList<Integer> fullListTest = oddNumbersExterminator.exterminate(fullList);
+        ArrayList<Integer> normalListTest = oddNumbersExterminator.exterminate(normalList);
+        System.out.println("Testing normal list");
         //Then
-        if (fullListTest.isEmpty() == false &&
-             fullListTest.contains(1) == false &&
-             fullListTest.contains(3) == false &&
-             fullListTest.contains(2) &&
-             fullListTest.contains(4)) {
-
-            System.out.println("Test of testOddNumbersExterminatorNormalList: OK");
+        Assert.assertEquals(expectedNormalList,normalListTest);
         }
-    }
 }
 

@@ -1,4 +1,9 @@
 package com.kodilla.testing.shape;
 
-public class Shape {
+interface Shape {
+
+    void getShapeName();
+
+    double getField();
+
 }
