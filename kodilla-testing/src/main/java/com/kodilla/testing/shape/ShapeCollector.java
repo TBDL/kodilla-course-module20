@@ -16,23 +16,24 @@ public class ShapeCollector {
     }
 
     public void addFigure(Shape shape) {
-        // do nothing
+
+        figures.add(shape);
     }
 
     public boolean removeFigure(Shape shape) {
-
+        figures.remove(shape);
         return true;
     }
 
     public Shape getFigure(int n) {
-        return null;
+        return figures.get(n);
     }
 
-    public void showFigures() {
-
+    public ArrayList<Shape> showFigures() {
+        return figures;
     }
 
     public int getFiguresQuantity(){
-        return 100;
+        return figures.size();
     }
 }

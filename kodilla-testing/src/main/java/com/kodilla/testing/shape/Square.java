@@ -10,8 +10,8 @@ public class Square implements Shape {
         this.side = side;
     }
 
-    public void getShapeName() {
-        System.out.println("square");
+    public String getShapeName() {
+        return name;
     }
 
     public double getField() {

@@ -10,12 +10,14 @@ public class Circle implements Shape {
         this.radius = radius;
     }
 
-    public void getShapeName() {
-        System.out.println("circle");
+    public String getShapeName() {
+        return name;
     }
 
     public double getField() {
         return Math.PI * (radius * radius);
     }
+
+
 
 }
