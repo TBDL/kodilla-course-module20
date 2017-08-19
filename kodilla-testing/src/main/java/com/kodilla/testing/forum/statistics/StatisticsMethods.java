@@ -49,12 +49,7 @@ public class StatisticsMethods {
        int averageCommentsAmountPerUser = statistics.commentsCount() / statistics.usersNames().size();
        int averageCommentsAmountPerPost = statistics.commentsCount() / statistics.postsCount();
 
-         statisticsList.add(usersAmount);
-         statisticsList.add(postsAmount);
-         statisticsList.add(commentsAmount);
-         statisticsList.add(averagePostAmountPerUser);
-         statisticsList.add(averageCommentsAmountPerUser);
-         statisticsList.add(averageCommentsAmountPerPost);
+
 
     }
 
