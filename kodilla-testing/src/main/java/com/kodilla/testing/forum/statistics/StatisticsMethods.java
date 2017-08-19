@@ -6,7 +6,6 @@ public class StatisticsMethods {
     private Statistics statistics;
     public ArrayList<Integer> statisticsList = new ArrayList<Integer>();
 
-
     public StatisticsMethods(Statistics statistics) {
         this.statistics = statistics;
     }
@@ -41,7 +40,7 @@ public class StatisticsMethods {
         return averageCommentsAmountPerPost;
     }
 
-       void calculateAdvStatistics(Statistics statistics) {
+     void calculateAdvStatistics(Statistics statistics) {
 
        int usersAmount = statistics.usersNames().size();
        int postsAmount = statistics.postsCount();
@@ -50,16 +49,18 @@ public class StatisticsMethods {
        int averageCommentsAmountPerUser = statistics.commentsCount() / statistics.usersNames().size();
        int averageCommentsAmountPerPost = statistics.commentsCount() / statistics.postsCount();
 
-       statisticsList.add(usersAmount);
-       statisticsList.add(postsAmount);
-       statisticsList.add(commentsAmount);
-       statisticsList.add(averagePostAmountPerUser);
-       statisticsList.add(averageCommentsAmountPerUser);
-       statisticsList.add(averageCommentsAmountPerPost);
+         statisticsList.add(usersAmount);
+         statisticsList.add(postsAmount);
+         statisticsList.add(commentsAmount);
+         statisticsList.add(averagePostAmountPerUser);
+         statisticsList.add(averageCommentsAmountPerUser);
+         statisticsList.add(averageCommentsAmountPerPost);
+
     }
 
-        ArrayList<Integer> ShowStatistics(){
-            return statisticsList;
-        }
+     ArrayList<Integer> showStatistics() {
+
+        return statisticsList;
+    }
 
 }

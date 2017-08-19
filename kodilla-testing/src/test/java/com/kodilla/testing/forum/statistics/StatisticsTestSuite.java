@@ -76,7 +76,8 @@ public class StatisticsTestSuite {
         when(statisticsMock.commentsCount()).thenReturn(commentsAmountTest);
         StatisticsMethods statisticsMethodsTest = new StatisticsMethods(statisticsMock);
         //When
-        boolean postAmountIsBiggerThanCommentsAmount = postsAmountTest > commentsAmountTest;
+        boolean postAmountIsBiggerThanCommentsAmount =
+                statisticsMethodsTest.getPostsAmount() >  statisticsMethodsTest.getCommentsAmount();
         //Then
         Assert.assertTrue(postAmountIsBiggerThanCommentsAmount);
 
@@ -93,25 +94,34 @@ public class StatisticsTestSuite {
         when(statisticsMock.commentsCount()).thenReturn(commentsAmountTest);
         StatisticsMethods statisticsMethodsTest = new StatisticsMethods(statisticsMock);
         //When
-        boolean commentsAmountIsBiggerThanPostsAmount = postsAmountTest < commentsAmountTest;
+        boolean commentsAmountIsBiggerThanPostsAmount =
+                statisticsMethodsTest.getPostsAmount() < statisticsMethodsTest.getCommentsAmount();
         //Then
         Assert.assertTrue(commentsAmountIsBiggerThanPostsAmount);
 
     }
 
-    @Test
-    public void testCalculateStatistics() {
-
+ /*   @Test
+        public void testCalculateStatistics() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
         int postsAmountTest = 1000;
         int commentsAmountTest = 0;
         ArrayList<String> userList = new ArrayList<String>();
         for (int i = 0; i < 100; i++) {userList.add("user");}
+        int averagePostAmountPerUserTest = postsAmountTest / userList.size();
+        int averageCommentsAmountPerUserTest = commentsAmountTest / userList.size();
+        int averageCommentsAmountPerPostTest = commentsAmountTest / userList.size();
+
+
         when(statisticsMock.postsCount()).thenReturn(postsAmountTest);
         when(statisticsMock.commentsCount()).thenReturn(commentsAmountTest);
         when(statisticsMock.usersNames()).thenReturn(userList);
-        double delta = 1e - 15;
+
+        //Assert
+        Assert.assertEquals(, );
     }
+
+*/
 
 }
