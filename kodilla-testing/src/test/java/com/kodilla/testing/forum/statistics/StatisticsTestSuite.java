@@ -101,7 +101,7 @@ public class StatisticsTestSuite {
 
     }
 
- /*   @Test
+    @Test
         public void testCalculateStatistics() {
         //Given
         Statistics statisticsMock = mock(Statistics.class);
@@ -109,19 +109,31 @@ public class StatisticsTestSuite {
         int commentsAmountTest = 0;
         ArrayList<String> userList = new ArrayList<String>();
         for (int i = 0; i < 100; i++) {userList.add("user");}
-        int averagePostAmountPerUserTest = postsAmountTest / userList.size();
-        int averageCommentsAmountPerUserTest = commentsAmountTest / userList.size();
-        int averageCommentsAmountPerPostTest = commentsAmountTest / userList.size();
-
 
         when(statisticsMock.postsCount()).thenReturn(postsAmountTest);
         when(statisticsMock.commentsCount()).thenReturn(commentsAmountTest);
         when(statisticsMock.usersNames()).thenReturn(userList);
+        StatisticsMethods statisticsMethodsTest = new StatisticsMethods(statisticsMock);
 
-        //Assert
-        Assert.assertEquals(, );
+        //When
+        statisticsMethodsTest.calculateAdvStatistics(statisticsMock);
+        Map<Integer, Integer> wynik = statisticsMethodsTest.showStatistics();
+
+        //then
+        Assert.assertEquals(Integer.valueOf(100), wynik.get(0));
     }
 
-*/
+
+    /*
+         //When
+        statisticsMethodsTest.calculateAdvStatistics(statisticsMock);
+        List<Integer> wynik = statisticsMethodsTest.showStatistics();
+
+        //then
+        Assert.assertEquals(Integer.valueOf(100), wynik.get(0));
+    }
+
+     */
+
 
 }

@@ -4,7 +4,7 @@ import java.util.*;
 public class StatisticsMethods {
 
     private Statistics statistics;
-    public ArrayList<Integer> statisticsList = new ArrayList<Integer>();
+    public Map<Integer, Integer> statisticsList = new HashMap<Integer, Integer>();
 
     public StatisticsMethods(Statistics statistics) {
         this.statistics = statistics;
@@ -49,11 +49,15 @@ public class StatisticsMethods {
        int averageCommentsAmountPerUser = statistics.commentsCount() / statistics.usersNames().size();
        int averageCommentsAmountPerPost = statistics.commentsCount() / statistics.postsCount();
 
-
-
+        statisticsList.put(0,usersAmount);
+        statisticsList.put(1,postsAmount);
+        statisticsList.put(2,commentsAmount);
+        statisticsList.put(3,averagePostAmountPerUser);
+        statisticsList.put(4,averageCommentsAmountPerUser);
+        statisticsList.put(5,averageCommentsAmountPerPost);
     }
 
-     ArrayList<Integer> showStatistics() {
+    Map<Integer, Integer> showStatistics() {
 
         return statisticsList;
     }

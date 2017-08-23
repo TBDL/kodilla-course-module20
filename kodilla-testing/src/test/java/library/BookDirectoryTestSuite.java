@@ -93,7 +93,7 @@ public class BookDirectoryTestSuite {
         BookLibrary bookLibrary = new BookLibrary(libraryDatabaseMock);
         LibraryUser user1 = new LibraryUser("Jan", "Lipa", "67856486");
         ArrayList<Book> booksToRent = new ArrayList<Book>();
-        {when(libraryDatabaseMock.listBooksInHandsOf(user1)).thenReturn(booksToRent);}
+        when(libraryDatabaseMock.listBooksInHandsOf(user1)).thenReturn(booksToRent);
         // When
         List<Book> books  = libraryDatabaseMock.listBooksInHandsOf(user1);
         // Assert
