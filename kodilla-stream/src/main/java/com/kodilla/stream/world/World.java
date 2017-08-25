@@ -6,18 +6,19 @@ import java.util.Set;
 
 public class World {
 
-    private final Continent continent;
-    private final Set<Set> continents = new HashSet<>();
-
     private final Set<Continent> continents = new HashSet<>();
+
+    public void addContinent(Continent continent) {
+        continents.add(continent);
+    }
 
     public BigDecimal getPeopleQuantity () {
         return continents.stream()
+                .flatMap(continentPopulation -> continentPopulation.getContinentPopulation().stream())
+                .map(s -> BigDecimal.valueOf(s))
+                .reduce(BigDecimal.ZERO,(sum, current) -> sum = sum.add(current));
 
     }
-
-    addContinent(Continent c) { continetns.add(c); }
-
 }
 
 
