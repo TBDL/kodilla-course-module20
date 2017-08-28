@@ -3,7 +3,6 @@ package com.kodilla.exception.io;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.stream.Stream;
 
@@ -20,11 +19,11 @@ public class FileReader {
 
         } catch (IOException e) {
 
-            System.out.println("Oh no" + e);
+            System.out.println("Oh no! something went wrong! Error: " + e);
 
         } finally {
 
-            System.out.println("I will ");
+            System.out.println("I am gonna be here... always!");
         }
 
 
