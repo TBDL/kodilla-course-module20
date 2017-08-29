@@ -157,9 +157,11 @@ public class BoardTestSuite {
                 .filter(inProgressTasks::contains)
                 .flatMap(a -> a.getTasks().stream())
                 .map(b -> ChronoUnit.DAYS.between(b.getCreated(), LocalDate.now()))
-                .collect(Collectors.averagingLong(c -> c));
+                .collect(Collectors.averagingDouble(c -> c));
         //Then
-       Assert.assertEquals(10, average, 0.1);
+       Assert.assertEquals(10.0, average, 0);
+
+
 
     }
 }
