@@ -1,9 +1,8 @@
 package com.kodilla.exception.test;
 
-
 import java.time.LocalDateTime;
 
-public class ExceptionHandling extends Exception {
+public class ExceptionHandling {
 
 
     public static void main(String args[]) {
