@@ -22,13 +22,9 @@ public class BookLibrary {
 
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser){
 
-        return null;
+        List<Book> books = libraryDatabase.listBooksInHandsOf(libraryUser);
 
+        return books;
     }
-
-    boolean rentABook(LibraryUser libraryUser, Book book) {
-
-        return true;
-    }
-
 }
+

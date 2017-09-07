@@ -7,8 +7,6 @@ import java.util.*;
 import static org.mockito.Mockito.*;
 import static org.junit.Assert.assertEquals;
 
-
-
 public class BookDirectoryTestSuite {
 
 
@@ -95,7 +93,7 @@ public class BookDirectoryTestSuite {
         ArrayList<Book> booksToRent = new ArrayList<Book>();
         when(libraryDatabaseMock.listBooksInHandsOf(user1)).thenReturn(booksToRent);
         // When
-        List<Book> books  = libraryDatabaseMock.listBooksInHandsOf(user1);
+        List<Book> books  = bookLibrary.listBooksInHandsOf(user1);
         // Assert
         assertEquals(0, books.size());
     }
@@ -109,10 +107,9 @@ public class BookDirectoryTestSuite {
         ArrayList<Book> booksToRent = new ArrayList<Book>();
         Book book1 = new Book("title1","author1",1999 );
         booksToRent.add(book1);
-        boolean rentedBook = bookLibrary.rentABook(user1,book1);
-        if(rentedBook){when(libraryDatabaseMock.listBooksInHandsOf(user1)).thenReturn(booksToRent);}
+        {when(libraryDatabaseMock.listBooksInHandsOf(user1)).thenReturn(booksToRent);}
         // When
-        List<Book> books  = libraryDatabaseMock.listBooksInHandsOf(user1);
+        List<Book> books  = bookLibrary.listBooksInHandsOf(user1);
         // Assert
         assertEquals(1, books.size());
     }
@@ -134,15 +131,9 @@ public class BookDirectoryTestSuite {
         booksToRent.add(book3);
         booksToRent.add(book4);
         booksToRent.add(book5);
-        boolean rentedBook1 = bookLibrary.rentABook(user1,book1);
-        boolean rentedBook2 = bookLibrary.rentABook(user1,book2);
-        boolean rentedBook3 = bookLibrary.rentABook(user1,book3);
-        boolean rentedBook4 = bookLibrary.rentABook(user1,book4);
-        boolean rentedBook5 = bookLibrary.rentABook(user1,book5);
-        if(rentedBook1 && rentedBook2 && rentedBook3 && rentedBook4 && rentedBook5)
         {when(libraryDatabaseMock.listBooksInHandsOf(user1)).thenReturn(booksToRent);}
         // When
-        List<Book> books  = libraryDatabaseMock.listBooksInHandsOf(user1);
+        List<Book> books  = bookLibrary.listBooksInHandsOf(user1);
         // Assert
         assertEquals(5, books.size());
     }
