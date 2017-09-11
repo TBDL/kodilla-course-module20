@@ -2,14 +2,10 @@ package com.kodilla.good.patterns.challenges.flights;
 
 public class Airport {
 
-    private String name;
+    private final String name;
 
     public Airport(String name) {
         this.name = name;
-    }
-
-    public String getName() {
-        return name;
     }
 
     @Override

@@ -4,7 +4,6 @@ import java.util.*;
 
 public final class Flights {
 
-
     public final Map<Airport, List<Airport>> getFlights() {
 
         final Map<Airport, List<Airport>> flights = new HashMap<>();
@@ -22,6 +21,6 @@ public final class Flights {
         flights.put(cracow, flightsFromCracow);
         flights.put(warsaw, flightsFromWarsaw);
 
-        return flights;
+        return new HashMap<>(flights);
     }
 }
