@@ -5,7 +5,8 @@ import java.util.Map;
 
 public class FlightSearchingSystem {
 
-    public void findFlight(Flight flight) throws RouteNotFoundException {
+    public String findFlight(Flight flight) throws RouteNotFoundException {
+
 
         Map<String, Boolean> openAirports = new HashMap<>();
 
@@ -23,22 +24,26 @@ public class FlightSearchingSystem {
                 throw new RouteNotFoundException();
             }
 
-            if (entry.getKey() == flight.getArrivalAirport() && entry.getValue()) {
-                    System.out.println("Flight to " + flight.getArrivalAirport() + " has been found");
-                } else {
-                    System.out.println("Flight to " + flight.getArrivalAirport() + " has not been found");
+
                 }
+        String name = "flight found";
+
+
+
+        return name;
+
             }
-        }
+
 
     public static void main (String[] args){
 
-        Flight flight1 = new Flight("Copernicus Airport Wrocław","typing error");
+        Flight flight1 = new Flight("Copernicus Airport Wrocław","Luxembourg Airport");
 
         FlightSearchingSystem search1 = new FlightSearchingSystem();
 
         try {
-            search1.findFlight(flight1);
+           String a =  search1.findFlight(flight1);
+           System.out.println(a);
         } catch (RouteNotFoundException e) {
             System.out.println("The airport has not been found: " + e);
         } finally {
